@@ -7,8 +7,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-"Plugin 'flazz/vim-colorschemes'
 Plugin 'tomasr/molokai'
+Plugin 'bling/vim-airline'
+
 Plugin 'kien/ctrlp.vim'
 Plugin 'ervandew/supertab'
 
@@ -16,8 +17,6 @@ Plugin 'fholgado/minibufexpl.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'majutsushi/tagbar'
-
-Plugin 'vim-scripts/Color-Scheme-Explorer'
 
 "Languages
 Plugin 'leafgarland/typescript-vim'
@@ -31,7 +30,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'daemonl/schkit-vim'
 
-Plugin 'godlygeek/tabular' 
+Plugin 'godlygeek/tabular'
 "Plugin 'dbext.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'javacomplete'
@@ -42,6 +41,9 @@ let g:gofmt_command = "goimports"
 set rtp+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
+
+let g:airline_powerline_fonts = 1
+
 
 """"
 " Numbers
@@ -64,14 +66,15 @@ set tabstop=4 softtabstop=4 shiftwidth=4
 let g:miniBufExplBuffersNeeded = 1
 let g:netrw_liststyle = 3
 
-hi MBENormal               guifg=White guibg=Black
-hi MBEChanged              guifg=Blue guibg=Black
-hi MBEVisibleNormal        guifg=Green guibg=Black
-hi MBEVisibleChanged       guifg=Green guibg=Black
-hi MBEVisibleActiveNormal  guifg=Green guibg=Black
-hi MBEVisibleActiveChanged guifg=Green guibg=Black
 
-	" display indentation guides
+"hi MBENormal               guifg=White guibg=Black
+"hi MBEChanged              guifg=Blue guibg=Black
+"hi MBEVisibleNormal        guifg=Green guibg=Black
+"hi MBEVisibleChanged       guifg=Green guibg=Black
+"hi MBEVisibleActiveNormal  guifg=Green guibg=Black
+"hi MBEVisibleActiveChanged guifg=Green guibg=Black
+
+" display indentation guides
 set list listchars=tab:·\ ,trail:·,extends:»,precedes:«,nbsp:×
 
 " My Maps
@@ -110,7 +113,7 @@ set guicursor=i:ver25-iCursor
 " Insert Mode Colors
 augroup insertMode
 	au!
-	au InsertEnter * hi StatusLine term=reverse guifg=Orange guibg=Black 
+	au InsertEnter * hi StatusLine term=reverse guifg=Orange guibg=Black
 	au InsertLeave * hi StatusLine term=reverse guifg=Black guibg=Green
 augroup END
 hi StatusLine term=reverse guifg=Black guibg=Green
