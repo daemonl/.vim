@@ -44,6 +44,9 @@ syntax on
 
 let g:airline_powerline_fonts = 1
 
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
 
 """"
 " Numbers
@@ -133,29 +136,6 @@ augroup linters
 	au!
 	au BufWritePost *.go Fmt
 augroup END
-
-func! SchkitAuto()
-	augroup schkit
-		au!
-		au BufWritePost field_map.yml make
-		au BufWritePost portal_model.yml make
-		au BufWritePost *.coffee make
-		au BufWritePost *.ts make
-	augroup END
-endfunction
-
-func! NoSchkitAuto()
-	augroup schkit
-		au!
-	augroup END
-endfunction
-
-
-command! SchkitAuto call SchkitAuto()
-command! NoSchkitAuto call NoSchkitAuto()
-
-map <silent> <F7> :w<CR>:execute('make ' . strpart(expand('%:p:h'),len($GOPATH)+5))<CR>:copen<CR>
-map <silent> <F8> :w<CR>:execute('!go test ' . strpart(expand('%:p:h'),len($GOPATH)+5))<CR>:copen<CR>
 
 " TagBar Golang settings
 let g:tagbar_type_go = {
