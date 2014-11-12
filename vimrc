@@ -89,7 +89,7 @@ noremap <PageDown> :bnext!<CR>
 imap <PageUp> <Nop>
 imap <PageDown> <Nop>
 " Toggle Vexplore with Ctrl-E
-nnoremap \ :NERDTreeToggle<CR>
+nnoremap <leader>] :NERDTreeToggle<CR>
 " Copy and Paste
 vnoremap <C-c> "+y
 noremap <C-c> "+y
