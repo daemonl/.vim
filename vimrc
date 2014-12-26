@@ -63,7 +63,7 @@ set rtp+=/usr/local/lib/node_modules/typescript-tools
 set number
 set mouse=a
 set t_Co=256
-colorscheme molokai
+silent! colorscheme molokai
 set tabstop=4 softtabstop=4 shiftwidth=4
 
 let g:miniBufExplBuffersNeeded = 1
