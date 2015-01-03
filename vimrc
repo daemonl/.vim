@@ -1,6 +1,9 @@
+set fenc=utf-8
+scriptencoding utf-8
+set encoding=utf-8
+
 let $PATH .= expand(":$HOME/go/bin:$HOME/.path")
 let $GOPATH = expand(":$HOME/go")
-
 " Vundle!
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -78,8 +81,7 @@ let g:netrw_liststyle = 3
 "hi MBEVisibleActiveChanged guifg=Green guibg=Black
 
 " display indentation guides
-set list listchars=tab:·\ ,trail:·,extends:»,precedes:«,nbsp:×
-
+set list listchars=tab:·\ ,trail:·,extends:>,precedes:>,nbsp:·
 " My Maps
 
 "inoremap <C-Space> <C-x><C-o>
