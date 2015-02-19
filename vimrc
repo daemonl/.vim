@@ -12,7 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tomasr/molokai'
 Plugin 'bling/vim-airline'
-
+Plugin 'fatih/vim-go'
 Plugin 'kien/ctrlp.vim'
 Plugin 'ervandew/supertab'
 
@@ -38,7 +38,6 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'javacomplete'
 Plugin 'scrooloose/syntastic'
-
 call vundle#end()
 let g:gofmt_command = "goimports"
 set rtp+=$GOROOT/misc/vim
@@ -63,6 +62,7 @@ match OverLength /\%81v.\+/
 "
 set rtp+=/usr/local/lib/node_modules/typescript-tools
 
+set splitright
 set number
 set mouse=a
 set t_Co=256
@@ -72,7 +72,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4
 let g:miniBufExplBuffersNeeded = 1
 let g:netrw_liststyle = 3
 
-
+ 
 "hi MBENormal               guifg=White guibg=Black
 "hi MBEChanged              guifg=Blue guibg=Black
 "hi MBEVisibleNormal        guifg=Green guibg=Black
@@ -133,11 +133,6 @@ augroup END
 " Lazy shift key :-)
 command! W w
 
-" ON SAVE...
-augroup linters
-	au!
-	au BufWritePost *.go Fmt
-augroup END
 
 " TagBar Golang settings
 let g:tagbar_type_go = {
