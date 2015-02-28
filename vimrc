@@ -26,6 +26,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'ingydotnet/yaml-vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
+Plugin 'gijsk/mozjs-syntax'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
