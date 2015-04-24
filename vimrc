@@ -10,9 +10,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
+"UI
 Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
-Plugin 'fatih/vim-go'
+
 Plugin 'kien/ctrlp.vim'
 Plugin 'ervandew/supertab'
 
@@ -20,8 +22,10 @@ Plugin 'fholgado/minibufexpl.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdcommenter'
 
 "Languages
+Plugin 'fatih/vim-go'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'ingydotnet/yaml-vim'
 Plugin 'kchmck/vim-coffee-script'
