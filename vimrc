@@ -35,6 +35,7 @@ Plugin 'gijsk/mozjs-syntax'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
+Plugin 'shime/vim-livedown'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'daemonl/schkit-vim'
 
@@ -59,19 +60,18 @@ set undodir=~/.vim/undo//
 " Numbers
 let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree', 'netrw']
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
 
-""""""""""""""""""""""""""
 " Typescript
-"
 set rtp+=/usr/local/lib/node_modules/typescript-tools
+
 
 set splitright
 set number
 set mouse=a
 set t_Co=256
-silent! colorscheme molokai
+
+
+" Tabs by default
 set tabstop=4 softtabstop=4 shiftwidth=4
 
 let g:miniBufExplBuffersNeeded = 1
@@ -87,38 +87,55 @@ let g:netrw_liststyle = 3
 
 " display indentation guides
 set list listchars=tab:·\ ,trail:·,extends:>,precedes:>,nbsp:·
-" My Maps
 
-"inoremap <C-Space> <C-x><C-o>
-"inoremap <C-@> <C-x><C-o>
+" My Maps
 noremap <PageUp> :bprev!<CR>
 noremap <PageDown> :bnext!<CR>
 imap <PageUp> <Nop>
 imap <PageDown> <Nop>
+
 " Toggle Vexplore with Ctrl-E
 nnoremap <leader>] :NERDTreeToggle<CR>
+
 " Copy and Paste
 vnoremap <C-c> "+y
 noremap <C-c> "+y
 noremap <C-v> "+p
 
-" Super Tab
-let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
+" Lazy shift key :-)
+command! W w
 
-"colorscheme default
+" Non default file type Load Mappings
+augroup fileTypes
+	au!
+	au BufRead,BufNewFile *.md setlocal filetype=markdown
+	au BufRead,BufNewFile *.ts setlocal filetype=typescript
+augroup END
+
+
+" Autocomplete like Bash
+set wildmode=longest,list,full
+set wildmenu
+set completeopt=longest,menuone
+
+" Super Tab
+"let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabLongestHighlight = 1
+
+" Colors
+if has("gui_running") || &t_Co >= 256
+	silent! colorscheme molokai
+endif
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
 
 set guicursor=n-v-c:block-Cursor
 set guicursor=i:ver25-iCursor
-
-"set omnifunc=syntaxcomplete#Complete
-
-" Make enter select the current item
-"inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-"inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
-"inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
-"inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
 
 " Insert Mode Colors
 augroup insertMode
@@ -126,17 +143,8 @@ augroup insertMode
 	au InsertEnter * hi StatusLine term=reverse guifg=Orange guibg=Black
 	au InsertLeave * hi StatusLine term=reverse guifg=Black guibg=Green
 augroup END
+
 hi StatusLine term=reverse guifg=Black guibg=Green
-
-" File Type Load Mappings
-augroup fileTypes
-	au!
-	au BufRead,BufNewFile *.md setlocal filetype=markdown
-	au BufRead,BufNewFile *.ts setlocal filetype=typescript
-augroup END
-
-" Lazy shift key :-)
-command! W w
 
 
 " TagBar Golang settings
