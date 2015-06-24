@@ -23,6 +23,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'chrisbra/unicode.vim'
 
 "Languages
 Plugin 'fatih/vim-go'
