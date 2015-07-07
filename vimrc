@@ -129,8 +129,8 @@ if has("gui_running") || &t_Co >= 256
 	silent! colorscheme molokai
 endif
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
 
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
