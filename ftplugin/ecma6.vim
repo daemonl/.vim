@@ -1,2 +1,1 @@
-setlocal makeprg=babel\ %
-setlocal syntax=javascript
+setlocal makeprg=babel-inline\ %

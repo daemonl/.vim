@@ -30,9 +30,10 @@ Plugin 'fatih/vim-go'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'ingydotnet/yaml-vim'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'pangloss/vim-javascript'
 Plugin 'groenewege/vim-less'
 Plugin 'gijsk/mozjs-syntax'
-
+Plugin 'sorin-ionescu/vim-htmlvalidator'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
@@ -106,11 +107,17 @@ noremap <C-v> "+p
 " Lazy shift key :-)
 command! W w
 
+function! SetECMA6 ()
+	setfiletype ecma6
+	setlocal syntax=javascript
+endfunction
 " Non default file type Load Mappings
 augroup fileTypes
 	au!
 	au BufRead,BufNewFile *.md setlocal filetype=markdown
 	au BufRead,BufNewFile *.ts setlocal filetype=typescript
+	au BufRead,BufNewFile *.es6 call SetECMA6()
+	au FileType html compiler html
 augroup END
 
 
