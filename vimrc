@@ -25,6 +25,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'chrisbra/unicode.vim'
 
+Plugin 'SirVer/ultisnips'
+
 "Languages
 Plugin 'fatih/vim-go'
 Plugin 'leafgarland/typescript-vim'
